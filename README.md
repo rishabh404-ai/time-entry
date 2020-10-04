@@ -26,22 +26,32 @@ Features Listed In The App :
 
 1. Landing Page Endpoint :
 Hosting > https://timeentryapi.herokuapp.com/api/v1/
+
+
 Localhost > http://127.0.0.1:8000/api/v1/
 
 2. Registeration Page Endpoint :
 Hosting > https://timeentryapi.herokuapp.com/api/v1/register/
+
+
 Localhost > http://127.0.0.1:8000/api/v1/register/
 
 3. Login Page Endpoint :
 Hosting > https://timeentryapi.herokuapp.com/api/v1/login/
+
+
 Localhost > http://127.0.0.1:8000/api/v1/login/
 
 4. Task Creation Endpoint (After Login or Registration) :
 Hosting > https://timeentryapi.herokuapp.com/api/v1/entry/
+
+
 Localhost > http://127.0.0.1:8000/api/v1/entry/
 
 5. User Tasks History Endoint:
 Hosting > https://timeentryapi.herokuapp.com/api/v1/history/
+
+
 Localhost > http://127.0.0.1:8000/api/v1/history/
 
 
