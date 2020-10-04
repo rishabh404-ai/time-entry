@@ -81,3 +81,15 @@ How to get the app running locally ?
 For Linux : RUN > pip3 install -r requirements.txt & python3 manage.py runserver
 
 For Windows : RUN > pip install -r requirements.txt & python manage.py runserver
+
+How to check entries in database ?
+
+Run > python3 manage.py createsuperuser 
+
+Please create a dummy superuser and check the details in the admin panel by going on the link : 
+
+
+Hosting > https://timeentryapi.herokuapp.com/admin/
+
+Localhost > http://127.0.0.1:8000/admin/
+
