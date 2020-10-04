@@ -54,8 +54,6 @@ Localhost > http://127.0.0.1:8000/api/v1/login/
 
 
 ![](working-screenshots/3.png)
-
-
 4. Task Creation Endpoint (After Login or Registration) :
 
 
