@@ -44,3 +44,9 @@ Localhost > http://127.0.0.1:8000/api/v1/entry/
 Hosting > https://timeentryapi.herokuapp.com/api/v1/history/
 Localhost > http://127.0.0.1:8000/api/v1/history/
 
+
+How to get the app running locally ?
+
+For Linux : RUN > pip3 install -r requirements.txt & python3 manage.py runserver
+
+For Windows : RUN > pip install -r requirements.txt & python manage.py runserver
