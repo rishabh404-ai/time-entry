@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block title %} Entry {% endblock %}
+
+{% block body %}
+       
+    <div class="jumbotron text-center">
+    <h1 class="display-3">Start Creating Your Tasks !</h1>
+    <div class="alert alert-primary" id='add' role="alert">
+        <h5 class="display-5 mx-2 my-2">Check your history of previous tasks here !</h5>
+        <a href='/api/v1/history/'><button class='btn btn-dark'>User History</button></a></div>  
+    <hr>
+
+    <!--TASK ENTRY FORM START HERE--> 
+    <form action="/api/v1/entry/" class="form-group" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <br> 
+    <button type="submit" id='two' class="btn btn-success btn-lg">Submit</button>
+    </form><br> 
+    
+    <!--Stopwatch Starts Here-->
+   <div class="countdown"><h3>Track your time</h3>
+       <h1>
+            <span id="minutes">0</span> :
+            <span id="seconds">0</span> :
+            <span id="centiseconds">0</span> 
+       </h1>
+   </div> 
+   <br>
+   <div>    
+    <button class='btn btn-dark' id='startCount' onclick="startCount()">Start</button>
+    <button class='btn btn-dark' id='pauseCount' onclick="pauseCount()">Pause</button>
+    <button class='btn btn-dark' id='resetCount' onclick="resetCount()">Reset</button>
+   </div>     
+    </div>
+ 
+{% block js %}
+{% for error in form.non_field_errors %}
+    <script>alert('{{error}}');</script>
+            
+{% endfor %} 
+<script>
+minutesCount = 0, secondsCount = 0, centisecondsCount = 0 
+
+minutes = document.getElementById('minutes');
+seconds = document.getElementById('seconds');
+centiseconds = document.getElementById('centiseconds');
+
+function startCount() {
+
+   minutessetinterval = setInterval(function() {
+        minutesCount += 1;
+        minutes.innerHTML = minutesCount
+        },60000)
+
+   secondssetinterval = setInterval(function() {
+        secondsCount += 1;
+        if(secondsCount > 59){
+            secondsCount = 1
+        }
+        seconds.innerHTML = secondsCount
+        },1000)
+    
+    centisecondssetinterval = setInterval(function(){
+        centisecondsCount += 1;
+        if(centisecondsCount > 99){
+            centisecondsCount = 1
+        }
+        centiseconds.innerHTML = centisecondsCount
+    },10)    
+
+   
+}  
+
+function pauseCount() {
+
+    clearInterval(minutessetinterval)
+    clearInterval(secondssetinterval)
+    clearInterval(centisecondssetinterval)
+   
+}  
+
+function resetCount() {
+
+    clearInterval(minutessetinterval)
+    clearInterval(secondssetinterval)
+    clearInterval(centisecondssetinterval)
+    minutesCount = 0, secondsCount = 0, centisecondsCount = 0 
+    minutes.innerHTML = minutesCount
+    seconds.innerHTML = secondsCount
+    centiseconds.innerHTML = centisecondsCount
+   
+}  
+
+</script>
+{% endblock %}
+{% endblock %}

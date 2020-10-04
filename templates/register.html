@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %} Registration {% endblock %}
+{% block body %}
+      <div class="alert alert-dark alert-dismissible mb-0" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+        <strong>
+          
+            Note: 
+          
+        </strong>
+        Please fill out the required details to register your account with us !
+      </div>
+  
+<div class="main-container container-fluid my-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-2">
+        
+            <!-- THE REGISTRATION FORM IS HERE -->
+                <h2>User Registration Form</h2><br>
+                <form action="/api/v1/register/" method='POST'>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">First Name:</label>
+                        {{form.first_name}}
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Last Name:</label>
+                        {{form.last_name}}
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Username:</label>
+                        {{form.username}}
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        {{form.email}}
+                    </div>
+                  
+                    <div class="form-group">
+                        <label for="phone">Password:</label>
+                        {{form.password}}
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Password Confirmation:</label>
+                        {{form.password2}}
+                    </div>
+                                
+                    <button type="submit" class="btn btn-danger mt-2">Submit</button>
+                </form>
+            
+        </div>
+       
+
+    </div>
+</div>
+<br><br><br><br><br><br>
+  <!-- FOOTER -->
+  <footer class="container-fluid bg-dark my-0 py-3 text-light">
+    <p class="mb-0 text-center">&copy; 2020-2021 Developed By Rishabh Mishra</p>
+    <p class="mb-0 text-center">
+      <a href="#">Back to top |</a>
+      <a href="#">Privacy |</a>
+      <a href="#">Terms</a>
+    </p>
+
+  </footer>
+  <!-- Custom JavaScript -->
+  <script src="https://apis.google.com/js/platform.js" defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+ <div>
+    {% block js %}
+    {% for error in form.non_field_errors %}
+    <script>alert('{{error}}');</script>
+            
+    {% endfor %} 
+    {% endblock %}     
+</div>
+{% endblock %}
+
+ 

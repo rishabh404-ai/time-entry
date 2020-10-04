@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} User History {% endblock %}
+{% block body %}
+<div class="jumbotron text-center main-container container-fluid">
+  <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+             
+  <h3 class="display-3">Past History Tasks Of {{request.user}}</h3>
+  <h5>Want to add new tasks ?</h5><a href="/api/v1/entry/"><button class="btn btn-primary">Go back to tasks page</button></a><br>
+  <h5 class="lead"><strong>Or</strong></h5><a href="/api/v1/logout/"><button type="submit" id='two' class="btn btn-danger">Logout</button></a>
+
+  </div>
+  </div> <br>
+
+  {% for entry in entries %}
+    <ul class="list-group">
+      <li class="list-group-item">Task Entry Id - {{entry.id}}</li>
+      <li class="list-group-item">User  - {{entry.user}}</li>
+      <li class="list-group-item">Task - {{entry.task}}</li>
+      <li class="list-group-item">Project - {{ entry.get_project_display }}</li>
+      <li class="list-group-item">Duration - {{entry.duration}}</li>
+      <h3 class="display-5 container">----Next----</h3>
+    </ul>
+  
+  {% endfor %}
+{% endblock %}
