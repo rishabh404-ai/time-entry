@@ -84,8 +84,8 @@ class LogEntryForm(forms.ModelForm):
         fields = ['task','project','start_time','end_time','duration']
         widgets = {
             'task':TextInput(attrs={'type':'text','class':"form-control", 'placeholder':"Enter your Task", 'name':"task" ,'required':'required'}),
-            'start_time':TextInput(attrs={'type':'date','class':"form-control", 'placeholder':"Add your task start date", 'name':"start_time" ,'required':'required'}),
-            'end_time':TextInput(attrs={'type':'date','class':"form-control", 'placeholder':"Add your task end date", 'name':"end_time" ,'required':'required'}),
+            'start_time':TextInput(attrs={'type':'datetime-local','class':"form-control", 'placeholder':"Add your task start date", 'name':"start_time" ,'required':'required'}),
+            'end_time':TextInput(attrs={'type':'datetime-local','class':"form-control", 'placeholder':"Add your task end date", 'name':"end_time" ,'required':'required'}),
             'duration': TextInput(attrs={'type':'duration','class':"form-control", 'placeholder':"Enter your Duration as per the track time like 13:50:23 ", 'name':"duration" ,'required':'required'})
         }
   
