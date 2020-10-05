@@ -14,10 +14,12 @@
 
   {% for entry in entries %}
     <ul class="list-group">
-      <li class="list-group-item">Task Entry Id - {{entry.id}}</li>
-      <li class="list-group-item">User  - {{entry.user}}</li>
-      <li class="list-group-item">Task - {{entry.task}}</li>
+      <li class="list-group-item">Task Entry Id - {{ entry.id }}</li>
+      <li class="list-group-item">User  - {{ entry.user }}</li>
+      <li class="list-group-item">Task - {{ entry.task }}</li>
       <li class="list-group-item">Project - {{ entry.get_project_display }}</li>
+      <li class="list-group-item">Start Time - {{ entry.start_time }}</li>
+      <li class="list-group-item">End Time - {{ entry.end_time }}</li>
       <li class="list-group-item">Duration - {{entry.duration}}</li>
       <h3 class="display-5 container">----Next----</h3>
     </ul>
