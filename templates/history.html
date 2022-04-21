@@ -1,17 +1,20 @@
 {% extends 'base.html' %}
 {% block title %} User History {% endblock %}
 {% block body %}
+
 <div class="jumbotron text-center main-container container-fluid">
+  
   <div class="row">
+    <h5 class="lead"><strong></strong></h5><a href="/logout/"><button type="submit" id='two' class="btn btn-danger" style="position: absolute; top: 0; right: 0;">Logout</button></a>  
       <div class="col-lg-8 offset-lg-2">
-             
-  <h3 class="display-3">Past History Tasks Of {{request.user}}</h3>
-  <h5>Want to add new tasks ?</h5><a href="/api/v1/entry/"><button class="btn btn-primary">Go back to tasks page</button></a><br>
-  <h5 class="lead"><strong>Or</strong></h5><a href="/api/v1/logout/"><button type="submit" id='two' class="btn btn-danger">Logout</button></a>
-
+  <blockquote class="blockquote text-center">
+    <p class="mb-0"><h1>Work History</h1></p>
+    <footer class="blockquote-footer">{{request.user}}<cite title="Source Title"></cite></footer>
+  </blockquote>        
   </div>
-  </div> <br>
-
+  </div> 
+  <a class="btn btn-success" href="/per-user-get-csv-employee-data/" role="button">Download Your Data</a>
+  <br></br>
   {% for entry in entries %}
     <ul class="list-group">
       <li class="list-group-item">Task Entry Id - {{ entry.id }}</li>
@@ -21,8 +24,11 @@
       <li class="list-group-item">Start Time - {{ entry.start_time }}</li>
       <li class="list-group-item">End Time - {{ entry.end_time }}</li>
       <li class="list-group-item">Duration - {{entry.duration}}</li>
+      <br></br>
       <h3 class="display-5 container">----Next----</h3>
-    </ul>
+    </ul>   
+    <h5>Want to add new tasks ?</h5><a href="/entry/"><button class="btn btn-primary">Go back to tasks page</button></a><br>
+  
   
   {% endfor %}
 {% endblock %}

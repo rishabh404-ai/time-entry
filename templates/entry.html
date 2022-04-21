@@ -7,11 +7,11 @@
     <h1 class="display-3">Start Creating Your Tasks !</h1>
     <div class="alert alert-primary" id='add' role="alert">
         <h5 class="display-5 mx-2 my-2">Check your history of previous tasks here !</h5>
-        <a href='/api/v1/history/'><button class='btn btn-dark'>User History</button></a></div>  
+        <a href='/history/'><button class='btn btn-dark'>User History</button></a></div>  
     <hr>
 
     <!--TASK ENTRY FORM START HERE--> 
-    <form action="/api/v1/entry/" class="form-group" method="POST">
+    <form action="/entry/" class="form-group" method="POST">
         {% csrf_token %}
         {{form}}
         <br> 
