@@ -1,7 +1,5 @@
 # time-entry
 
-Assignment For @Ufaber
-
 Heroku Web Hosting Link - https://timeentryapi.herokuapp.com/api/v1/
 
 Features Listed In The App :
